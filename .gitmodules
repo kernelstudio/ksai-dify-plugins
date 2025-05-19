@@ -1,0 +1,6 @@
+[submodule "ksai-dify-plugin-authorized-db"]
+	path = ksai-dify-plugin-authorized-db
+	url = https://github.com/kernelstudio/ksai-dify-plugin-authorized-db
+[submodule "ksai-dify-plugin-db"]
+	path = ksai-dify-plugin-db
+	url = https://github.com/kernelstudio/ksai-dify-plugin-db
