@@ -1,0 +1,29 @@
+.env
+*.env.*
+.git*
+*.md
+*.sh
+
+web/
+static/storage/
+tests/
+tmp/
+storage/
+demos/
+cache/
+backup/
+converter/
+docker/
+docs/
+
+# Logs
+logs
+*.log*
+
+# jetbrains
+.idea
+.mypy_cache
+.ruff_cache
+
+# venv
+.venv
