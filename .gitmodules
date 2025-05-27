@@ -4,3 +4,6 @@
 [submodule "ksai-dify-plugin-db"]
 	path = ksai-dify-plugin-db
 	url = https://github.com/kernelstudio/ksai-dify-plugin-db
+[submodule "ksai-dify-plugin-contract"]
+	path = ksai-dify-plugin-contract
+	url = https://github.com/kernelstudio/ksai-dify-plugin-contract
