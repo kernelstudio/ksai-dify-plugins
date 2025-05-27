@@ -1,0 +1,45 @@
+identity:
+  author: kernelstudio
+  name: ksai-dify-plugin-contract
+  label:
+    en_US: KSAI Contract
+    zh_Hans: KSAI合同
+  description:
+    en_US: KSAI Contract
+    zh_Hans: KSAI合同
+  icon: icon.svg
+credentials_for_provider :
+  ollama_host :
+    type : text-input
+    required : true
+    default : "http://ollama:11434"
+    label :
+      en_US : Ollama Host
+      zh_Hans : Ollama 主机地址
+    human_description :
+      en_US : Ollama Host.
+      zh_Hans : Ollama 主机地址
+  extractor_model :
+    type : text-input
+    required : true
+    default : "contract-parser:latest"
+    label :
+      en_US : Contract Extractor Model Name
+      zh_Hans : 合同提取模型名称
+    human_description :
+      en_US : "Contract Extractor Model Name, Default: contract-parser:latest"
+      zh_Hans : "合同提取模型名称,默认为: contract-parser:latest"
+  extractor_rules :
+    type : text-input
+    required : false
+    label :
+      en_US : Contract Extractor Rules
+      zh_Hans : 合同提取规则
+    human_description :
+      en_US : Contract Extractor Rules
+      zh_Hans : 合同提取规则,多个以逗号分隔
+tools:
+  - tools/ksai-dify-plugin-contract-extractor.yaml
+extra:
+  python:
+    source: provider/ksai-dify-plugin-contract.py

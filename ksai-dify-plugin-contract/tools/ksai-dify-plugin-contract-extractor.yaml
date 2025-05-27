@@ -1,0 +1,185 @@
+identity :
+  name : ksai-dify-plugin-contract
+  author : kernelstudio
+  label :
+    en_US : KSAI Contract Extractor
+    zh_Hans : KSAI合同提取器
+description :
+  human :
+    en_US : KSAI Contract Extractor
+    zh_Hans : KSAI合同提取器
+  llm : KSAI Contract Extractor
+parameters :
+  - name : text
+    type : string
+    required : false
+    llm_description : text
+    form : llm
+    label :
+      en_US : "Contract text"
+      zh_Hans : "合同文本"
+    human_description :
+      en_US : "Contract text"
+      zh_Hans : "合同文本"
+  - name : system_prompt
+    type : string
+    required : false
+    llm_description : system_prompt
+    form : llm
+    label :
+      en_US : System prompt
+      zh_Hans : 系统提示词
+    human_description :
+      en_US : "System prompt."
+      zh_Hans : "系统提示词."
+  - name : user_prompt
+    type : string
+    required : false
+    llm_description : user_prompt
+    form : llm
+    default : "提取以下合同中的关键信息."
+    label :
+      en_US : User Prompt
+      zh_Hans : 用户提示词
+    human_description :
+      en_US : "User prompt words, where {rules} is a placeholder for extracting rules."
+      zh_Hans : "用户提示词,其中{rules}为提取规则占位符."
+  - name : rules
+    type : string
+    llm_description : rules
+    form : llm
+    required : false
+    label :
+      en_US : rules
+      zh_Hans : 提取规则
+    human_description :
+      en_US : "Extract rules, if not set, use globally set values."
+      zh_Hans : 提取规则,多个以逗号分隔,若未设置则使用全局设置的值.
+  - name : stream
+    type : boolean
+    llm_description : stream
+    form : form
+    required : false
+    default : 0.1
+    label :
+      en_US : stream
+      zh_Hans : 流式返回
+    human_description :
+      en_US : Stream response.
+      zh_Hans : 流式返回.
+  - name : connection_timeout
+    type : number
+    llm_description : Connection timeout
+    form : form
+    required : false
+    default : 120
+    label :
+      en_US : Connection timeout
+      zh_Hans : 连接超时时间
+    human_description :
+      en_US : Connection timeout.
+      zh_Hans : 连接超时时间,默认120秒.
+  - name : read_timeout
+    type : number
+    llm_description : Read timeout
+    form : form
+    required : false
+    default : 120
+    label :
+      en_US : Read timeout
+      zh_Hans : 读取超时时间
+    human_description :
+      en_US : Read timeout.
+      zh_Hans : 读取超时时间,默认120秒.
+  - name : temperature
+    type : number
+    llm_description : temperature
+    form : form
+    required : false
+    default : 0.1
+    label :
+      en_US : temperature
+      zh_Hans : temperature
+    human_description :
+      en_US : Control the creativity generated, the higher the value, the more creative and diverse the generated text will be; The lower the value, the more deterministic the generated result.
+      zh_Hans : 温度值,控制生成的创造性,其值越高,生成的文本越具有创造性和多样性;其值越低,生成结果更确定性.
+  - name : top_p
+    type : number
+    llm_description : top_p
+    form : form
+    required : false
+    label :
+      en_US : top_p
+      zh_Hans : top_p
+    human_description :
+      en_US : Based on cumulative probability selection of tokens, the lower the top_p, the more concentrated the generated results are on high probability tokens.
+      zh_Hans : 基于累积概率选择tokens,top_p越低,生成结果越集中于高概率tokens.
+  - name : top_k
+    type : number
+    llm_description : top_k
+    form : form
+    required : false
+    label :
+      en_US : top_k
+      zh_Hans : top_k
+    human_description :
+      en_US : Select the next token from the top k tokens with the highest probability. A lower value increases the generation certainty, while a higher value increases the generation diversity.
+      zh_Hans : 从前k个概率最高的tokens中挑选下一个token,较低的值使生成更加确定性,较高的值增加生成的多样性.
+  - name : seed
+    type : number
+    llm_description : seed
+    form : form
+    required : false
+    label :
+      en_US : seed
+      zh_Hans : seed
+    human_description :
+      en_US : Set a random number seed to control the randomness during the generation process. The same seed will result in the same output, suitable for scenarios that require reproducible results.
+      zh_Hans : 随机数种子,用于控制生成过程中的随机性,相同的种子会导致相同的输出,适用于需要可重复结果的场景.
+  - name : num_predict
+    type : number
+    llm_description : num_predict
+    form : form
+    required : false
+    label :
+      en_US : num_predict
+      zh_Hans : num_predict
+    human_description :
+      en_US : The maximum number of tokens generated, controlling the length of the generated text.
+      zh_Hans : 生成的最大tokens数量,控制生成的文本长度.
+  - name : repeat_penalty
+    type : number
+    llm_description : repeat_penalty
+    form : form
+    required : false
+    label :
+      en_US : repeat_penalty
+      zh_Hans : repeat_penalty
+    human_description :
+      en_US : Set the intensity of repeated punishment, the higher the value, the more likely the model will avoid repeating the same tokens.
+      zh_Hans : 设置重复惩罚的强度,值越高,模型越会避免重复相同的tokens.
+  - name : repeat_last_n
+    type : number
+    llm_description : repeat_last_n
+    form : form
+    required : false
+    label :
+      en_US : repeat_last_n
+      zh_Hans : repeat_last_n
+    human_description :
+      en_US : Set the length of the model review history tokens for repeated penalties.
+      zh_Hans : 设置模型回顾历史tokens的长度,用于重复惩罚.
+  - name : num_ctx
+    type : number
+    llm_description : repeat_last_n
+    form : form
+    required : false
+    label :
+      en_US : num_ctx
+      zh_Hans : num_ctx
+    human_description :
+      en_US : Set the size of the context to determine how many tokens the model can 'remember'. It is more important when creating long texts.
+      zh_Hans : 设置上下文的大小,决定模型能记住多少个tokens,在生成长文本时较为重要.
+extra :
+  python :
+    source : tools/ksai-dify-plugin-contract-extractor.py
