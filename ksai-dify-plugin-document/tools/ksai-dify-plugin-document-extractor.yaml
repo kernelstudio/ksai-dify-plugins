@@ -1,0 +1,26 @@
+identity:
+  name: ksai-dify-plugin-document-extractor
+  author: kernelstudio
+  label:
+    en_US: KSAI Document Extractor
+    zh_Hans: KSAI 文档提取
+description:
+  human:
+    en_US: KSAI Document Extractor
+    zh_Hans: KSAI 文档提取
+  llm: KSAI Document Extractor
+parameters:
+  - name: files
+    type: files
+    required: true
+    label:
+      en_US: Files
+      zh_Hans: 文件
+    human_description:
+      en_US: Files
+      zh_Hans: 文件
+    llm_description: 文件
+    form: llm
+extra:
+  python:
+    source: tools/ksai-dify-plugin-document-extractor.py
